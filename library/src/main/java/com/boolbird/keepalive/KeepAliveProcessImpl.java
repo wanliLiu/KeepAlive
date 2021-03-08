@@ -146,9 +146,6 @@ public class KeepAliveProcessImpl implements IKeepAliveProcess {
         ComponentName component = new ComponentName(context.getPackageName(), serviceName);
         intent.setComponent(component);
 
-        Parcel parcel = Parcel.obtain();
-        intent.writeToParcel(parcel, 0);
-
         mServiceData = Parcel.obtain();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             /* Android 8.1 frameworks/base/core/java/android/app/IActivityManager.aidl

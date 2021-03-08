@@ -183,6 +183,8 @@ Java_com_boolbird_keepalive_NativeKeepAlive_doDaemon(JNIEnv *env, jobject jobj,
         // 直接传递parcel，会导致监听不到进程被杀；改成传输u8*数据解决了
         do_daemon(env, jobj, indicator_self_path_child, indicator_daemon_path_child,
                   observer_self_path_child, observer_daemon_path_child, code, data, data_size);
+
+        return;
     }
 
     close(fd[0]);
